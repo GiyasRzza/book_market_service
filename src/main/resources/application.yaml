@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: book-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/book-service-db
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:searcher}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+    change-log: classpath:changelog/liquibaseTest.xml
+    search-path: classpath:changelog/
+  main:
+    allow-bean-definition-overriding: true
+#logging:
+#  file:
+#    path: C:\\Users\\giyas\\OneDrive\\Desktop
+#    name: Logging.txt
+#  level:
+#    root: info
+
+#logging:
+#  level:
+#    root: INFO
+#  file:
+#    name: C:\Users\giyas\OneDrive\Desktop\Logging.txt
+
+logging:
+  level:
+    root: info
+#  logback:
+#  rolling-policy:
+#    file-name-pattern: "C:\\Users\\giyas\\OneDrive\\Desktop\\SpringLog.%d{yyyy-MM-dd}.log"
+
+
